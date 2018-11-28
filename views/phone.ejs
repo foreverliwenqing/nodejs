@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>xx后台管理系统</title>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <div class="container">
+
+    <%- include('./common/head') %>
+
+    <div class="lv-main"> 
+      <%- include('./common/menu') %>
+
+      <div class="body">
+        <div id="myCarousel" class="carousel slide">
+          <!-- 轮播（Carousel）指标 -->
+          <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>   
+          <!-- 轮播（Carousel）项目 -->
+          <div class="carousel-inner">
+              <div class="item active">
+                  <img src="/images/sj4.0.jpg" alt="First slide">
+          
+              </div>
+              <div class="item">
+                  <img src="/images/slun1.jpg" alt="Second slide">
+              </div>
+              <div class="item">
+                  <img src="/images/sjwt.jpg" alt="Third slide">
+              </div>
+          </div>
+          <!-- 轮播（Carousel）导航 -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+          </a>
+      </div>
+      </div>
+
+    </div>
+
+    <%- include('./common/foot') %>
+  </div>
+</body>
+</html>
