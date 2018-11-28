@@ -46,9 +46,98 @@ router.get('/', function(req, res, next) {
   });
 });
 
+//登录操作 localhost:3000/users/login
+router.post('/login',function(req,res){
+    //1：获取到前端传递过来的参数
+    var username = req.body.name;
+    var password = req.body.pwd;
 
-// router.get('/')
+    //2:验证参数的有效性
+    if(!username){
+        res.render('error',{
+            message:'用户名不能为空',
+            error: new Error('用户名不能为空')
+        })
+        return;
+    }
+    if(!password){
+      res.render('error',{
+        message:'密码不能为空',
+        error: new Error('密码不能为空')
+      })
+      return; 
+    }
+    // res.send('');
+    //3:  连接数据库做验证
+    MongoClient.connect(url, { useNewUrlParser: true }, function(err, client) {
+      if (err) {
+        console.log('连接失败', err);
+        res.render('error', {
+          message: '连接失败',
+          error: err
+        })
+        return;
+      }
+      var db = client.db('project');
 
+      // db.collection('user').find({ 
+      //     username:username,
+      //     password:password
+      // //进行单独的登录验证判断mongodb里面是否存在。
+      // }).count(function(err,num){
+      //   if(err){
+      //     console.log('查询失败',err);
+      //     res.render('error',{
+      //         message:'查询失败',
+      //         error:err
+      //     })
+      //   }else if(num > 0){
+      //       // 注意，当前url地址是 location:3000/users/login。 
+      //       //如果直接使用 render() .页面地址是不会改变的。
+      //       // res.redirect('http://localhost:3000/');
+      //       res.redirect('/');
+      //   }else{
+      //       //登录失败
+      //       res.render('error',{
 
+      //           message:'登录失败',
+      //           error: new Error('登录失败')
+      //       })
+      //   }
+      //   client.close();
+    // }) 
+      
+    db.collection('user').find({
+        //把获取到的值赋值
+        username:username,
+        password:password
+    }).toArray(function(err, data) {
+      if (err) {
+        console.log('查询失败', err);
+        res.render('error', {
+          message: '查询失败',
+          error: err
+        })
+      } else if (data.length <= 0) {
+        // 没找到接收到的值data的长度为0，登录失败
+        res.render('error', {
+          message: '登录失败',
+          error: new Error('登录失败')
+        })
+      } else {
+        // 登录成功
+        // cookie操作把昵称报错在cookie里面
+        res.cookie('nickname', data[0].nickname, {
+            //在cookie中保存的最长的时间。
+             maxAge: 10 * 60 * 1000
+        });
+
+        res.redirect('/');
+      }
+      client.close();
+    })
+  })
+  // res.send(''); 注意这里，因为 mongodb 的操作时异步操作。
+})
 
 module.exports = router;

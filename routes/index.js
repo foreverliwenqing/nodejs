@@ -16,6 +16,10 @@ router.get('/brand.html', function(req, res) {
   res.render('brand');
 });
 
+router.get('/login.html',function(req,res,next){
+    res.render('login');
+})
+
 router.get('/phone.html', function(req, res) {
   res.render('phone');
 })

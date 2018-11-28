@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var ignoreRouter = require('./config/ignoreRouter');
 var indexRouter = require('./routes/index.js');
 var usersRouter = require('./routes/users.js');
 
@@ -18,6 +19,29 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+//自己实现的中间件函数，用来判断用户是否登录
+app.use(function(req,res,next){
+
+
+  //排除登录和注册；  如果cookie里面存在就可以实现跳转。
+  if(ignoreRouter.indexOf(req.url) > -1){
+      next();
+      return;
+  }
+
+  //得到的保存在cookie中的一个值
+  var nickname = req.cookies.nickname; 
+  if(nickname){
+    //如果nickname存在于cookie里的话就不用再到登录页面中去
+    next();
+  }else{
+    //如果nickname不存在，就跳转到登录页面(用地址重定向。)
+    res.redirect('/login.html');
+  }
+    //中间件执行了，要往下面走用next()
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
