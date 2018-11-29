@@ -5,21 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>xx后台管理系统</title>
+  <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
   <div class="container">
     <!-- 到/users/login的文件中进行验证 -->
+    <h1>xxx后台管理系统</h1>
+    <h3>登录</h3>
     <form action="/users/login" method="POST">
       <label>
         <span>用户名：</span>
-        <input type="text" name="name" placeholder="请输入用户名">
-      </label>
-      <label>
-        <span>密码：</span>
-        <input type="password" name="pwd" placeholder="请输入密码">
-      </label>
+        <input type="text" name="name" placeholder="请输入用户名" class = 'name'>
+      </label><br><br>
+      <label><br><br>
+        <span>密&emsp;码：</span>
+        <input type="password" name="pwd" placeholder="请输入密码" class = 'pwd'>
+      </label><br><br>
 
-      <input type="submit" value="登录">
+      <input type="submit" value="登录" class = 'sub'>
     </form>
   </div>
 </body>

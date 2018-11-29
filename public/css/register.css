@@ -1,0 +1,29 @@
+.container {
+  margin: 150px auto;
+  border: 1px solid black;
+  text-align: center;
+  width: 800px;
+  height: 400px;
+  border-radius: 30px; }
+  .container h1 {
+    font-size: 30px; }
+  .container form {
+    margin-top: 50px; }
+    .container form span {
+      font-size: 23px;
+      font-weight: bold; }
+    .container form .regname, .container form .regpwd {
+      width: 370px;
+      height: 30px; }
+    .container form .regsub {
+      width: 140px;
+      height: 30px;
+      margin-top: 30px;
+      margin-left: 200px;
+      margin-right: 30px; }
+    .container form .guanli {
+      margin-left: -308px; }
+    .container form .sex {
+      margin-left: -308px; }
+
+/*# sourceMappingURL=register.css.map */
