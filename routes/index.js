@@ -12,6 +12,13 @@ router.get('/', function(req, res, next) {
 //   res.render('users');
 // });
 
+
+// 注册页面的路由
+router.get('/register.html', function(req, res) {
+  res.render('register');
+})
+
+
 router.get('/brand.html', function(req, res) {
   res.render('brand');
 });
