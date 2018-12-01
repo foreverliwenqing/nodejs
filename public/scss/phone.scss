@@ -1,0 +1,46 @@
+.push{
+    position: absolute;
+    width:400px;
+    height:300px;
+    border:1px solid black;
+    background: rgb(190, 170, 170);
+    right:410px; 
+    top:220px;
+    border-radius: 20px;
+    text-align: center;
+    display:none;
+    h1{
+        font-size:30px;
+        margin-top:30px;
+        margin-bottom: 20px;
+    }
+    span{
+        font-size:20px;
+    }
+    .price1{
+        margin-left:0px;
+    }
+    .price{
+        width:200px;
+        height:30px;
+        margin-left:20px;
+    }
+    .regname,.regpwd{
+        width:200px;
+        height:30px;
+    }
+    .sex{
+        margin-left:-150px;
+    }
+    .guanli{
+        margin-left:-150px;
+    }
+    .btn{
+        margin-top:3px;
+    }
+    .a{
+        cursor: pointer;
+        margin-top:10px;
+        color:blue;
+    }
+}

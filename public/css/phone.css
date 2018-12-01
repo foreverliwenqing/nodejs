@@ -1,0 +1,38 @@
+.push {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  border: 1px solid black;
+  background: #beaaaa;
+  right: 410px;
+  top: 220px;
+  border-radius: 20px;
+  text-align: center;
+  display: none; }
+  .push h1 {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px; }
+  .push span {
+    font-size: 20px; }
+  .push .price1 {
+    margin-left: 0px; }
+  .push .price {
+    width: 200px;
+    height: 30px;
+    margin-left: 20px; }
+  .push .regname, .push .regpwd {
+    width: 200px;
+    height: 30px; }
+  .push .sex {
+    margin-left: -150px; }
+  .push .guanli {
+    margin-left: -150px; }
+  .push .btn {
+    margin-top: 3px; }
+  .push .a {
+    cursor: pointer;
+    margin-top: 10px;
+    color: blue; }
+
+/*# sourceMappingURL=phone.css.map */

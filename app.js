@@ -34,12 +34,12 @@ app.use(function(req,res,next){
   }
 
   //得到的保存在cookie中的一个值
-  var nickname = req.cookies.nickname; 
-  if(nickname){
-    //如果nickname存在于cookie里的话就不用再到登录页面中去
+  var username = req.cookies.username; 
+  if(username){
+    //如果username存在于cookie里的话就不用再到登录页面中去
     next();
   }else{
-    //如果nickname不存在，就跳转到登录页面(用地址重定向。)
+    //如果username不存在，就跳转到登录页面(用地址重定向。)
     res.redirect('/login.html');
   }
     //中间件执行了，要往下面走用next()
@@ -47,6 +47,7 @@ app.use(function(req,res,next){
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

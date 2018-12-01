@@ -1,0 +1,32 @@
+.remake {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  border: 1px solid black;
+  background: #beaaaa;
+  right: 410px;
+  top: 220px;
+  border-radius: 20px;
+  text-align: center;
+  display: none; }
+  .remake h1 {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px; }
+  .remake span {
+    font-size: 20px; }
+  .remake .regname, .remake .regpwd {
+    width: 200px;
+    height: 30px; }
+  .remake .sex {
+    margin-left: -150px; }
+  .remake .guanli {
+    margin-left: -150px; }
+  .remake .btn {
+    margin-top: 20px; }
+  .remake .a {
+    cursor: pointer;
+    margin-top: 10px;
+    color: blue; }
+
+/*# sourceMappingURL=remake.css.map */
